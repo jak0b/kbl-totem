@@ -145,7 +145,7 @@
                  &kp Q  &kp W  &kp E  &kp R       &kp T                   &kp Y   &kp U  &kp I    &kp O    &kp P
                  &kp A  &kp S  &kp D  &kp F       &kp G                   &kp H   &kp J  &kp K    &kp L    &kp TAB
         LTSHFT   &kp Z  &kp X  &kp C  &kp V       &kp B                   &kp N   &kp M  &kp BSPC &kp DOT  &kp FSLH  RTSHFT
-                                      &lts 1 LALT &mo 1 &mt LTH   &mt RTH &mo 1   &kp RALT
+                                      &lts 3 LALT &mo 1 &mt LTH   &mt RTH &mo 2   &kp RALT
       >;
     };
 
@@ -154,7 +154,25 @@
                 &kp ESC &kp N2    &kp PLUS  &kp N4      &kp N6                   &none    &kp COLON  &kp TILDE  &kp SEMI  &none
                 &kp N0  &kp UNDER &kp MINUS &kp EQUAL   &kp N8                   &kp PIPE &kp LPAR   &kp LBKT   &kp LBRC  &kp LT
         LTSHFT  &kp N1  &kp N3    &kp N5    &kp N7      &kp N9                   &none    &kp RPAR   &kp RBKT   &kp RBRC  &kp GT  RSHIFT
-                                            &lts 1 LALT &mo 1  &mt LTH   &mt RTH &mo 1    &kp RALT
+                                            &lts 3 LALT &mo 1  &mt LTH   &mt RTH &mo 2    &kp RALT
+      >;
+    };
+
+    raise_layer {
+      bindings = <
+               &none     &kp AT    &kp HASH &kp PRCNT    &none                     &none        &kp AMPS   &kp ASTRK &kp CARET  &none
+               &kp EXCL  &kp GRAVE &kp DQT  &kp SQT      &kp DLLR                  &kp LEFT     &kp DOWN   &kp UP    &kp RIGHT  &none
+        LTSHFT &kp QMARK &none     &none    &none        &none                     &none        &none      &kp DEL   &kp COMMA  &kp BSLH  LTSHFT
+                                            &lts 3 LALT  &mo 1  &mt LTH   &mt RTH  &mo 2        &kp RALT
+      >;
+    };
+
+    opt_layer {
+      bindings = <
+                &none        &br_dn      &prev_next   &br_up      &none                               &none          &none           &none        &none            &kp LS(LG(N3))
+                &kp PG_UP    &vol_dn_bt  &vol_mute_bt &vol_up_bt  &kp HOME                            &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP &mmv MOVE_RIGHT  &kp LS(LG(N4))
+        LTSHFT  &kp PG_DN    &prev_bt    &plpa_bt     &next_bt    &kp END                             &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT  &kp LS(LG(N5))  RTSHFT
+                                                      &lts 3 LALT &mo 1   &clear_bt        &mkp LCLK  &mkp MCLK      &mkp RCLK
       >;
     };
   };
