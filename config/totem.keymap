@@ -128,11 +128,34 @@
       mods = <(MOD_LSFT)>;
     };
 
+    out_usb: keyboard_output_usb {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&none>, <&out OUT_USB>;
+      mods = <(MOD_LSFT)>;
+    };
+
+    out_bt: keyboard_output_bluetooth {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&none>, <&out OUT_BLE>;
+      mods = <(MOD_LSFT)>;
+    };
+
     clear_bt: bluetooth_clear {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&none>, <&out BT_CLR>;
       mods = <(MOD_LSFT)>;
+    };
+  };
+
+  conditional_layers {
+    compatible = "zmk,conditional-layers";
+
+    function_layer {
+      if-layers = <1 2>;
+      then-layer = <4>;
     };
   };
 
@@ -168,10 +191,19 @@
 
     opt_layer {
       bindings = <
-                &none        &br_dn      &prev_next   &br_up      &none                               &none          &none           &none        &none            &kp LS(LG(N3))
+                &out_bt      &br_dn      &prev_next   &br_up      &out_usb                            &none          &none           &none        &none            &kp LS(LG(N3))
                 &kp PG_UP    &vol_dn_bt  &vol_mute_bt &vol_up_bt  &kp HOME                            &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP &mmv MOVE_RIGHT  &kp LS(LG(N4))
         LTSHFT  &kp PG_DN    &prev_bt    &plpa_bt     &next_bt    &kp END                             &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT  &kp LS(LG(N5))  RTSHFT
                                                       &lts 3 LALT &mo 1   &clear_bt        &mkp LCLK  &mkp MCLK      &mkp RCLK
+      >;
+    };
+
+    function_layer {
+      bindings = <
+               &none   &kp F2   &none   &kp F4    &kp F6                     &none  &none    &none  &none  &none
+               &none   &kp F10  &kp F11 &kp F12   &kp F8                     &none  &kp RES  &none  &none  &none
+        &none  &kp F1  &kp F3   &kp F5  &kp F7    &kp F9                     &none  &none    &none  &none  &none  &none
+                                        &none     &none  &none        &none  &none  &none
       >;
     };
   };
