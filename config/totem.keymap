@@ -55,8 +55,7 @@
       bindings = <&mo 5>;
     };
   };
-
-}
+};
 
 / {
   behaviors {
