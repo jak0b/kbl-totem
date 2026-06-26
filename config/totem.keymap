@@ -150,6 +150,16 @@
     };
   };
 
+  combos {
+    compatible = "zmk,combos";
+    
+    combo_momentary_layer {
+      timeout-ms = <100>;
+      key-positions = <32 20>; // if Opt and Left Shift are pressed
+      bindings = <&mo 5>;
+    };
+  };
+
   conditional_layers {
     compatible = "zmk,conditional-layers";
 
