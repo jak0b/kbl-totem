@@ -122,7 +122,7 @@
 
     control_layer {
       bindings = <
-               &none         &kp EXT_BRI_UP &mkp MB5      &kp EXT_BRI_DN &out BLE                   &none  &none  &none  &none  &none
+               &none         &kp EXT_BRI_UP &mkp MB5      &kp EXT_BRI_DN &out OUT_BLE               &none  &none  &none  &none  &none
                &out OUT_USB  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2   &none                      &none  &none  &none  &none  &none
         &none  &none         &bt BT_DISC 0  &bt BT_DISC 1 &bt BT_DISC 2  &none                      &none  &none  &none  &none  &none  &none
                                                           &none          &none  &bt BT_CLR          &none  &none  &none
