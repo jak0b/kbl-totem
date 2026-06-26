@@ -60,20 +60,6 @@
 
 / {
   behaviors {
-    br_dn: brightness_down {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp BRI_DN>, <&kp EXT_BRI_DN>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-
-    br_up: brightness_up {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp BRI_UP>, <&kp EXT_BRI_UP>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-
     lts: layer_tap_sticky {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
@@ -81,85 +67,6 @@
       tapping-term-ms = <160>;
       bindings = <&mo>, <&sk>;
       display-name = "Layer-Tap-Sticky";
-    };
-
-    mts: mod_tap_sticky {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <160>;
-      bindings = <&sk>, <&kp>;
-      display-name = "Mod-Tap-Sticky";
-    };
-
-    prev_next: prev_and_next {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&mkp MB4>, <&mkp MB5>;
-      mods = <(MOD_LSFT)>;
-    };
-
-    vol_dn_bt: volume_down_bluetooth_0 {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp VOL_DN>, <&bt BT_SEL 0>;
-      mods = <(MOD_LSFT)>;
-    };
-
-    prev_bt: media_previous_bluetooth_0 {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp PREV>, <&bt BT_DISC 0>;
-      mods = <(MOD_LSFT)>;
-    };
-
-    vol_mute_bt: volume_mute_bluetooth_1 {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp MUTE>, <&bt BT_SEL 1>;
-      mods = <(MOD_LSFT)>;
-    };
-
-    plpa_bt: play_stop_bluetooth_1 {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp PLPA>, <&bt BT_DISC 1>;
-      mods = <(MOD_LSFT)>;
-    };
-
-    vol_up_bt: volume_up_bluetooth_2 {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp VOL_UP>, <&bt BT_SEL 2>;
-      mods = <(MOD_LSFT)>;
-    };
-
-    next_bt: next_bluetooth_2 {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp NEXT>, <&bt BT_DISC 2>;
-      mods = <(MOD_LSFT)>;
-    };
-
-    out_usb: keyboard_output_usb {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&none>, <&out OUT_USB>;
-      mods = <(MOD_LSFT)>;
-    };
-
-    out_bt: keyboard_output_bluetooth {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&none>, <&out OUT_BLE>;
-      mods = <(MOD_LSFT)>;
-    };
-
-    clear_bt: bluetooth_clear {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&none>, <&out BT_CLR>;
-      mods = <(MOD_LSFT)>;
     };
   };
 
@@ -204,9 +111,9 @@
 
     opt_layer {
       bindings = <
-                &out_bt      &br_dn      &prev_next   &br_up      &out_usb                            &none          &none           &none        &none            &kp LS(LG(N3))
-                &kp PG_UP    &vol_dn_bt  &vol_mute_bt &vol_up_bt  &kp HOME                            &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP &mmv MOVE_RIGHT  &kp LS(LG(N4))
-        LTSHFT  &kp PG_DN    &prev_bt    &plpa_bt     &next_bt    &kp END                             &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT  &kp LS(LG(N5))  RTSHFT
+                &none        &kp BRI_UP  &mkp MB4     &kp BRI_DN  &none                               &none          &none           &none        &none            &kp LS(LG(N3))
+                &kp PG_UP    &kp VOL_DN  &kp MUTE     &kp VOL_UP  &kp HOME                            &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP &mmv MOVE_RIGHT  &kp LS(LG(N4))
+        LTSHFT  &kp PG_DN    &kp PREV    &kp PLPA     &kp NEXT    &kp END                             &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT  &kp LS(LG(N5))  RTSHFT
                                                       &lts 3 LALT &mo 1   &clear_bt        &mkp LCLK  &mkp MCLK      &mkp RCLK
       >;
     };
@@ -222,10 +129,10 @@
 
     control_layer {
       bindings = <
-               &none  &out OUT_USB  &none         &none         &out BLE                   &none  &none  &none  &none  &none
-               &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none                      &none  &none  &none  &none  &none
-        &none  &none  &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &none                      &none  &none  &none  &none  &none  &none
-                                                  &none         &none  &bt BT_CLR          &none  &none  &none
+               &none         &kp EXT_BRI_UP &mkp MB5      &kp EXT_BRI_DN &out BLE                   &none  &none  &none  &none  &none
+               &out OUT_USB  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2   &none                      &none  &none  &none  &none  &none
+        &none  &none         &bt BT_DISC 0  &bt BT_DISC 1 &bt BT_DISC 2  &none                      &none  &none  &none  &none  &none  &none
+                                                          &none          &none  &bt BT_CLR          &none  &none  &none
       >;
     };
   };
