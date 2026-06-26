@@ -18,10 +18,9 @@
 #define BRI_DN C_BRI_DN
 #define EXT_BRI_DN LC(BRI_DN)
 
-#define PLPA   K_PP
-#define NEXT   K_NEXT
-#define PREV   K_PREV
-#define RES    LC(LA(DEL))
+#define PLPA   C_PLAY_PAUSE
+#define NEXT   C_NEXT
+#define PREV   C_PREV
 
 #define LTSHFT &kp LSHIFT
 #define RTSHFT &kp RSHIFT
@@ -113,9 +112,9 @@
 
     function_layer {
       bindings = <
-               &none   &kp F2   &none   &kp F4    &kp F6                     &none  &none    &none  &none  &none
-               &none   &kp F10  &kp F11 &kp F12   &kp F8                     &none  &kp RES  &none  &none  &none
-        &none  &kp F1  &kp F3   &kp F5  &kp F7    &kp F9                     &none  &none    &none  &none  &none  &none
+               &none   &kp F2   &none   &kp F4    &kp F6                     &none  &none            &none  &none  &none
+               &none   &kp F10  &kp F11 &kp F12   &kp F8                     &none  &kp LC(LA(DEL))  &none  &none  &none
+        &none  &kp F1  &kp F3   &kp F5  &kp F7    &kp F9                     &none  &none            &none  &none  &none  &none
                                         &none     &none  &none        &none  &none  &none
       >;
     };
