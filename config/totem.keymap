@@ -86,7 +86,7 @@
     lower_layer {
       bindings = <
                 &kp N0  &kp N2    &kp PLUS  &kp N4      &kp N6                   &none    &kp COLON  &kp TILDE  &kp SEMI  &none
-                &kp N0  &kp UNDER &kp MINUS &kp EQUAL   &kp N8                   &kp PIPE &kp LPAR   &kp LBKT   &kp LBRC  &kp LT
+                &kp ESC &kp UNDER &kp MINUS &kp EQUAL   &kp N8                   &kp PIPE &kp LPAR   &kp LBKT   &kp LBRC  &kp LT
         LTSHFT  &kp N1  &kp N3    &kp N5    &kp N7      &kp N9                   &none    &kp RPAR   &kp RBKT   &kp RBRC  &kp GT  RTSHFT
                                             &lts 3 LALT &mo 1  &mt LTH   &mt RTH &mo 2    &kp RALT
       >;
@@ -96,7 +96,7 @@
       bindings = <
                &none     &kp AT    &kp HASH &kp PRCNT    &none                     &none        &kp AMPS   &kp ASTRK &kp CARET  &none
                &kp EXCL  &kp GRAVE &kp DQT  &kp SQT      &kp DLLR                  &kp LEFT     &kp DOWN   &kp UP    &kp RIGHT  &none
-        LTSHFT &kp QMARK &none     &none    &none        &none                     &none        &none      &kp DEL   &kp COMMA  &kp BSLH  LTSHFT
+        LTSHFT &kp QMARK &none     &none    &none        &none                     &none        &none      &kp DEL   &kp COMMA  &kp BSLH  RTSHFT
                                             &lts 3 LALT  &mo 1  &mt LTH   &mt RTH  &mo 2        &kp RALT
       >;
     };
@@ -106,7 +106,7 @@
                 &none        &kp BRI_DN  &mkp MB4     &kp BRI_UP  &none                               &none          &none           &none        &none            &kp LS(LG(N3))
                 &kp PG_UP    &kp VOL_DN  &kp MUTE     &kp VOL_UP  &kp HOME                            &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_UP &mmv MOVE_RIGHT  &kp LS(LG(N4))
         LTSHFT  &kp PG_DN    &kp PREV    &kp PLPA     &kp NEXT    &kp END                             &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT  &kp LS(LG(N5))  RTSHFT
-                                                      &lts 3 LALT &mo 1   &none        &mkp LCLK  &mkp MCLK      &mkp RCLK
+                                                      &lts 3 LALT &mo 1   &none            &mkp LCLK  &mkp MCLK      &mkp RCLK
       >;
     };
 
@@ -122,8 +122,8 @@
     control_layer {
       bindings = <
                &out OUT_USB  &kp EXT_BRI_DN &mkp MB5      &kp EXT_BRI_UP &out OUT_BLE               &none  &none  &none  &none  &none
-               &none         &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2   &none                      &none  &none  &none  &none  &none
-        &none  &none         &bt BT_DISC 0  &bt BT_DISC 1 &bt BT_DISC 2  &none                      &none  &none  &none  &none  &none  &none
+               &none         &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3               &none  &none  &none  &none  &none
+        &none  &none         &bt BT_DISC 0  &bt BT_DISC 1 &bt BT_DISC 2  &bt BT_DISC 3              &none  &none  &none  &none  &none  &none
                                                           &none          &none  &bt BT_CLR          &none  &none  &none
       >;
     };
