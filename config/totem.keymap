@@ -8,7 +8,6 @@
 
 #define LTH LCTRL SPACE
 #define RTH LMETA RET
-#define LPK LSHIFT ESC
 
 #define VOL_UP C_VOL_UP
 #define VOL_DN C_VOL_DN
